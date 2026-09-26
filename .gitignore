@@ -53,8 +53,11 @@ dist/
 *.egg-info/
 
 # ML/data, model caches and large files
-patcheck-ml-service/data/
-**/data/
+patcheck-ml-service/data/*
+**/data/*
+!patcheck-ml-service/data/faiss_index/
+!patcheck-ml-service/data/faiss_index/index.faiss
+!patcheck-ml-service/data/faiss_index/id_mapping.json
 ml-data/
 patcheck-ml-service/models/
 huggingface_cache/

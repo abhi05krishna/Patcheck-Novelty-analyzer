@@ -1,0 +1,2 @@
+patcheck-ml-service/data/faiss_index/index.faiss filter=lfs diff=lfs merge=lfs -text
+patcheck-ml-service/data/faiss_index/id_mapping.json filter=lfs diff=lfs merge=lfs -text
