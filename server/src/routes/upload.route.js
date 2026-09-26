@@ -1,0 +1,2 @@
+import express from "express"; import { upload } from "../config/multer.config.js"; import { handleCompareUpload } from "../controllers/upload.controller.js"; import { optionalAuth } from "../middleware/authenticate.js";
+const router = express.Router(); router.post("/compare/upload", optionalAuth, upload.single("file"), handleCompareUpload); export default router;

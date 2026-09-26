@@ -1,0 +1,2 @@
+import express from "express"; import { handleCompare } from "../controllers/compare.controller.js"; import { optionalAuth } from "../middleware/authenticate.js";
+const router = express.Router(); router.post("/compare", optionalAuth, handleCompare); export default router;

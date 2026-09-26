@@ -1,0 +1,3 @@
+import { verifyAccessToken } from "../utils/tokens.js";
+export function requireAuth(req, res, next) { const token = req.headers.authorization?.startsWith("Bearer ") ? req.headers.authorization.slice(7) : null; if (!token) return res.status(401).json({ error: "Authentication required." }); try { req.auth = verifyAccessToken(token); return next(); } catch { return res.status(401).json({ error: "Your session has expired. Please sign in again." }); } }
+export function optionalAuth(req, _res, next) { const token = req.headers.authorization?.startsWith("Bearer ") ? req.headers.authorization.slice(7) : null; if (token) { try { req.auth = verifyAccessToken(token); } catch {} } next(); }
