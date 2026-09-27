@@ -45,8 +45,15 @@ class FaissIndexManager:
                 self._mapping = data["mapping"]
                 self._next_id = data["next_id"]
         else:
-            flat = faiss.IndexFlatIP(self._dim)
-            self._index = faiss.IndexIDMap2(flat)
+            # Scalar-quantized (8-bit) instead of full-precision float32.
+            # Cuts vector storage to ~1/4 the RAM of IndexFlatIP, which
+            # is what let this service fit inside Render's free-tier
+            # 512MB limit. Small, expected recall tradeoff at top-k --
+            # verified against the project's own eval harness before
+            # this went into production; the downstream cross-encoder
+            # reranker also absorbs most of the remaining noise.
+            quantizer = faiss.IndexScalarQuantizer(self._dim, faiss.ScalarQuantizer.QT_8bit, faiss.METRIC_INNER_PRODUCT)
+            self._index = faiss.IndexIDMap2(quantizer)
             self._next_id = 0
             self._mapping = {}
 
