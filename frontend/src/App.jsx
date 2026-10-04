@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 import { request, setAccessToken } from "./api";
-import HomePage from "./pages/HomePage";
-import AuthPage from "./pages/AuthPage";
-import DashboardPage from "./pages/DashboardPage";
-import ResultsPage from "./pages/ResultsPage";
+import HomePage from "./pages/HomePage.jsx";
+import AuthPage from "./pages/AuthPage.jsx";
+import DashboardPage from "./pages/DashboardPage.jsx";
+import ResultsPage from "./pages/ResultsPage.jsx";
 import "./App.css";
 
 export default function App() {

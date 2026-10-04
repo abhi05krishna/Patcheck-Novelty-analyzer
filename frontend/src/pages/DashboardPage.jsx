@@ -8,7 +8,7 @@ import {
   Upload,
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../components/navigation/Header";
+import Header from "../components/navigation/Header.jsx";
 import { request } from "../api";
 import { researchLinks } from "../data/research.js";
 

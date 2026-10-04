@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Header from "../components/navigation/Header";
-import Metric from "../components/results/Metric";
+import Header from "../components/navigation/Header.jsx";
+import Metric from "../components/results/Metric.jsx";
 import { demoResult } from "../data/research.js";
-import { toRealArxivUrl } from "../utils/arxiv";
+import { toRealArxivUrl } from "../utils/arxiv.js";
 
 export default function ResultsPage() {
   const navigate = useNavigate();

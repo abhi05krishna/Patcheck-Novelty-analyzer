@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import Header from "../components/navigation/Header";
+import Header from "../components/navigation/Header.jsx";
 import { request, setAccessToken } from "../api";
 
 export default function AuthPage({ mode, onAuth }) {

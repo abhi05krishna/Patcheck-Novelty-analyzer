@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { LogOut, Menu, X } from "lucide-react";
-import Brand from "./Brand";
+import Brand from "./Brand.jsx";
 
 export default function Header({ user, onLogout }) {
   const [open, setOpen] = useState(false);

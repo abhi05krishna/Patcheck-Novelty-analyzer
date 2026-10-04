@@ -7,8 +7,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import Header from "../components/navigation/Header";
-import Footer from "../components/layout/Footer";
+import Header from "../components/navigation/Header.jsx";
+import Footer from "../components/layout/Footer.jsx";
 
 const steps = [
   [
