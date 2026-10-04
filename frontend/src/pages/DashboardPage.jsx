@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/navigation/Header.jsx";
-import { request } from "../api";
+import { request } from "../api.js";
 import { researchLinks } from "../data/research.js";
 
 function DashboardSidebar({ history, openResult, onDelete }) {
