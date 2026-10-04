@@ -10,7 +10,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/navigation/Header";
 import { request } from "../api";
-import { researchLinks } from "../data/research";
+import { researchLinks } from "../data/research.js";
 
 function DashboardSidebar({ history, openResult, onDelete }) {
   return (

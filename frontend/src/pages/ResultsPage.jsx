@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/navigation/Header";
 import Metric from "../components/results/Metric";
-import { demoResult } from "../data/research";
+import { demoResult } from "../data/research.js";
 import { toRealArxivUrl } from "../utils/arxiv";
 
 export default function ResultsPage() {
