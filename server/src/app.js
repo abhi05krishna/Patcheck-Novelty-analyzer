@@ -6,7 +6,14 @@ import uploadRoutes from "./routes/upload.route.js";
 import authRoutes from "./routes/auth.route.js";
 import historyRoutes from "./routes/history.route.js";
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173", credentials: true }));
-app.use(express.json({ limit: "1mb" })); app.use(cookieParser());
-app.use("/api", authRoutes); app.use("/api", historyRoutes); app.use("/api", compareRoutes); app.use("/api", uploadRoutes);
+app.use(cors({
+  origin: "https://patcheck-novelty-analyzer.vercel.app",
+  credentials: true
+}));
+app.use(express.json({ limit: "1mb" }));
+app.use(cookieParser());
+app.use("/api", authRoutes);
+app.use("/api", historyRoutes);
+app.use("/api", compareRoutes);
+app.use("/api", uploadRoutes);
 export default app;
